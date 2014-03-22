@@ -1,0 +1,168 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="nl" lang="nl">
+    <head>
+        <meta charset="UTF-8" />
+
+        <title>FB: Window Events</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="static/0.0.1/css/style.css" />
+        <!-- DOCUMENTATION CSS ONLY!! -->
+        <link rel="stylesheet" href="static/0.0.1/css/docs.css" />
+
+        <!-- THEN JS -->
+        <script src="static/core.js"></script>
+        <script src="static/0.0.1/js/bundle.js"></script>
+
+
+    </head>
+
+<body>
+
+
+<div class="docs-header docs-header-live">
+	<span class="fb-icon">FB live v0.0.1</span>
+	<span class="docs-main-menu" onclick="javascript:var e = document.getElementById('docs-menu'); switch(e.className){ case 'fb-hidden': e.className = ''; break; default: e.className = 'fb-hidden'; break; }">M</span>
+</div>
+
+<ul id="docs-menu" class="fb-hidden">
+	
+	    <li><a href="responsive-image.html" class="docs-menu-item">Responsive Image</a></li>
+	
+	    <li><a href="styling.html" class="docs-menu-item">Styling</a></li>
+	
+	    <li><a href="window-events.html" class="docs-menu-item">Window Events</a></li>
+	
+	    <li><a href="pubsub.html" class="docs-menu-item">Pubsub</a></li>
+	
+</ul>
+
+
+<h1 class="docs-title">Window Events</h1>
+
+<div class="docs-intro">Window-events is a central window events handler, for scroll and resize. It will set just one scroll and resize listener, if at least one script needs it. At that point no new listeners will be set, and all events will be published</div>
+
+
+
+<div class="docs-example">
+
+
+
+
+<div class="docs-info">
+    <p>resize 1 and resize 2 should be called on end (debounce)</p>
+    <p>resize 3 should be throttled</p>
+    <p>scroll1 should be throttled</p>
+    <p>scroll2 should be debounced</p>
+</div>
+
+
+<h3 class="fb-h4">Log: last ones appear at the top (try scrolling and resizing)</h3>
+
+<div id="debug" class="docs-log"> </div>
+
+<div class="fb-docs-controls">
+    <button class="fb-btn" id="removeScroll2Button"><span>remove scroll2</span></button>
+    <button class="fb-btn" id="removeResize1Button"><span>remove resize1</span></button>
+</div>
+
+<script>
+
+    // fix non existant console
+    if (!window.console) {
+        console = {
+            log : function () {}
+        }
+    }
+    require(['fb/jquery'], function ($) {
+        var $debugContainer = $('#debug');
+
+        window.debug = function (arg) {
+            $debugContainer.prepend("<p>" + arg + "</p>");
+            console.log(arg);
+        }
+    });
+</script>
+
+<script>
+    
+    require(['fb/jquery', 'fb/window-events'], function ($, $windowEvents) {
+
+        // ********************
+        // setting up windowEvents
+        // ********************
+
+        // resize example
+        function onResize1(type, data) {
+            debug('resize 1, (debounce) new width: ' + data.width);
+        }
+        
+        $windowEvents.onResize(onResize1); // debounce
+
+
+        // scroll example 1
+        function onScroll1(type, data) {
+            debug('scroll 1, (throttle) new scrollTop: ' +  data.scrollTop)
+        }
+
+        // used 'throttle' here, which will fire every x milliseconds, 
+        $windowEvents.onScroll(onScroll1, 'throttle');
+
+
+        // scroll example 2 
+        // using debounce, now the scroll event is just fired if the scrolling stops 
+        function onScroll2(type, data) {
+            debug('scroll 2, (debounce) new scrollTop: ' +  data.scrollTop)
+        }
+
+        $windowEvents.onScroll(onScroll2, 'debounce');
+
+
+        // resize example 2
+        function onResize2(type, data) {
+            debug('resize 2,(debounce) width: ' +  data.width);
+        }
+        $windowEvents.onResize(onResize2); // debounce
+
+
+        // resize example 3, using throttle
+        function onResize3(type, data) {
+            debug('resize 3, (throttle) new width: ' + data.width);
+        }
+        $windowEvents.onResize(onResize3, 'throttle');
+
+
+        // ********************
+        // removing windowEvents
+        // ********************
+
+        // remove resize listener onResize1
+        $('#removeResize1Button').on('click', function () {
+            $windowEvents.offResize(onResize1);
+
+            debug('offResize resize1');
+        });
+
+        // remove scroll listener onScroll2
+        $('#removeScroll2Button').on('click', function () {
+            $windowEvents.offScroll(onScroll2, 'debounce');
+
+            debug('offScroll scroll2');
+        });
+
+
+
+    });
+</script>
+
+
+</div>
+
+<p id="docs-bottom" class="docs-footer">&copy; 2014 All rights reserved. FB. </p>
+
+</body>
+</html>

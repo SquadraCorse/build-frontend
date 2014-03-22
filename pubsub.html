@@ -1,0 +1,112 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="nl" lang="nl">
+    <head>
+        <meta charset="UTF-8" />
+
+        <title>FB: Pubsub</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="static/0.0.1/css/style.css" />
+        <!-- DOCUMENTATION CSS ONLY!! -->
+        <link rel="stylesheet" href="static/0.0.1/css/docs.css" />
+
+        <!-- THEN JS -->
+        <script src="static/core.js"></script>
+        <script src="static/0.0.1/js/bundle.js"></script>
+
+
+    </head>
+
+<body>
+
+
+<div class="docs-header docs-header-live">
+	<span class="fb-icon">FB live v0.0.1</span>
+	<span class="docs-main-menu" onclick="javascript:var e = document.getElementById('docs-menu'); switch(e.className){ case 'fb-hidden': e.className = ''; break; default: e.className = 'fb-hidden'; break; }">M</span>
+</div>
+
+<ul id="docs-menu" class="fb-hidden">
+	
+	    <li><a href="responsive-image.html" class="docs-menu-item">Responsive Image</a></li>
+	
+	    <li><a href="styling.html" class="docs-menu-item">Styling</a></li>
+	
+	    <li><a href="window-events.html" class="docs-menu-item">Window Events</a></li>
+	
+	    <li><a href="pubsub.html" class="docs-menu-item">Pubsub</a></li>
+	
+</ul>
+
+
+<h1 class="docs-title">Pubsub</h1>
+
+<div class="docs-intro">Pubsub can be used for cross module communication. It&#x27;s not intended for internal module usage.</div>
+
+
+
+<div class="docs-example">
+
+
+
+<h2 class="fb-h3">Example module1 publishes module1.buttonclick</h2>
+
+<div class="module1 docs-controls">
+    <button id="module1_btn" class="fb-btn fb-btn-primary"><span>publish</span></button>
+    <button id="module1_btn_unsubscribe" class="fb-btn"><span>unsubscribe</span></button>
+</div>
+
+<p>log</p>
+
+<div id="docs-log" class="docs-log">
+
+</div>
+
+<script>
+    require(['fb/jquery', 'fb/pubsub'], function ($, $pubsub) {
+        
+        // PUBLISHER
+        function handleButtonClick(e) {
+            e.preventDefault();
+
+            // publish
+            $pubsub.publish('module1:buttonclick', 'some data');
+        }
+
+        $('#module1_btn').on('click', handleButtonClick);
+
+
+
+        // SUBSCRIBER
+
+        function handleModule1ButtonClick(e, data) {
+            $('#docs-log').append('<p>Module1 published <strong>' + data + '</strong> with event: <strong>' + e + '</strong></p>'); 
+        }
+
+        // subscribe
+        $pubsub.subscribe('module1:buttonclick', handleModule1ButtonClick);
+
+
+        // unsubscribe
+        function handleUnsubscribe(e) {
+            e.preventDefault();
+
+            // unsubscribe using eventtype and handler
+            $pubsub.unsubscribe('module1:buttonclick', handleModule1ButtonClick);
+        }
+
+        $('#module1_btn_unsubscribe').on('click', handleUnsubscribe);
+
+
+    });
+</script>
+
+</div>
+
+<p id="docs-bottom" class="docs-footer">&copy; 2014 All rights reserved. FB. </p>
+
+</body>
+</html>
