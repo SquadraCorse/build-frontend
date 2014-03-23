@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-        <title>FB: Basic FB template</title>
+        <title>FB: Grid</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         
         <!-- MAIN CSS -->
@@ -26,16 +26,36 @@
 <body>
 
 
-
-
-<div class="fb-row">
-	HEADER + LOGO
+<div class="docs-header docs-header-live">
+	<span class="fb-icon">FB live v0.0.2</span>
+	<span class="docs-main-menu" onclick="javascript:var e = document.getElementById('docs-menu'); switch(e.className){ case 'fb-hidden': e.className = ''; break; default: e.className = 'fb-hidden'; break; }">M</span>
 </div>
 
+<ul id="docs-menu" class="fb-hidden">
+	
+	    <li><a href="responsive-image.html" class="docs-menu-item">Responsive Image</a></li>
+	
+	    <li><a href="styling.html" class="docs-menu-item">STYLE: button</a></li>
+	
+	    <li><a href="grid.html" class="docs-menu-item">STYLE: grid</a></li>
+	
+	    <li><a href="footer.html" class="docs-menu-item">STYLE: footer</a></li>
+	
+	    <li><a href="window-events.html" class="docs-menu-item">Window Events</a></li>
+	
+	    <li><a href="pubsub.html" class="docs-menu-item">Pubsub</a></li>
+	
+</ul>
+
 <div class="fb-row">
-	MENU
+
+	<h1 class="docs-title">Grid</h1>
+	<div class="docs-intro">Main responsive grid</div>
+
 </div>
 
+
+<div class="docs-example">
 
 
 <style>
@@ -101,31 +121,9 @@
 
 
 
-
-
-
-<div class="fb-footer">
-
-	<div class="fb-footer-carriers-wrapper">
-		
-		<ul class="fb-footer-carriers">
-			<li class="fb-footer-carrier">A</li>
-			<li class="fb-footer-carrier">B</li>
-		</ul>
-
-	</div>
-
-	<div class="fb-footer-wrapper">
-
-		<div class="fb-footer-notice">
-			NOTICE
-		</div>
-		<div class="fb-footer-copyright">
-			COPYRIGHT PRIVACY
-		</div>
-	</div>
-
 </div>
+
+<p id="docs-bottom" class="docs-footer">&copy; 2014 All rights reserved. FB. </p>
 
 </body>
 </html>
