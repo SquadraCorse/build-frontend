@@ -1,5 +1,4 @@
-==============
-build-frontend
+Static versioned content & Demonstration pages
 ==============
 
 Output target from repo 'setup-front-end' which is available at http://github.com/SquadraCorse/setup-front-end
