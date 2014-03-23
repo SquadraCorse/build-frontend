@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="nl" lang="nl">
@@ -32,7 +33,9 @@
 	
 	    <li><a href="responsive-image.html" class="docs-menu-item">Responsive Image</a></li>
 	
-	    <li><a href="styling.html" class="docs-menu-item">Styling</a></li>
+	    <li><a href="styling.html" class="docs-menu-item">STYLE: button</a></li>
+	
+	    <li><a href="footer.html" class="docs-menu-item">STYLE: footer</a></li>
 	
 	    <li><a href="window-events.html" class="docs-menu-item">Window Events</a></li>
 	
@@ -112,7 +115,7 @@
 <p>
 $image.crawl({container: 'selector-view'}); when you added new containers.<br />
 $image.clean({container: 'selector-view-you-want-to-be-cleaned'}); to clean up (when SPA no detached state will be there).<br/>
-$image.html({srcset: 'string holding srcset like in examples above'}); to give you the right image html tag (when you need it in your _.template and don't want to crawl for it).
+var img = $image.html('http://dummyimage.com/480x270/000/fff.png 480w, http://dummyimage.com/800x450/000/fff.png 768w, http://dummyimage.com/960x540/000/fff.png 1x', 'dummy-class'); to give you the right image html tag (when you need it in your _.template and don't want to crawl for it).
 </p>
 
 
