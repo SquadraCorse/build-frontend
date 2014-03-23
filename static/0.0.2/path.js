@@ -1,0 +1,1 @@
+require.config({paths:{fb:"static/0.0.2/js","fb-core":"static/0.0.2/"},waitSeconds:0});
