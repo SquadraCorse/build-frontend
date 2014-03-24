@@ -7,6 +7,8 @@ a:hover{text-decoration:underline}
 .fb-clear:after,.fb-row:after{clear:both}
 .lt-ie8 .fb-clear,.lt-ie8 .fb-row{zoom:1}
 .fb-hidden{display:none !important;visibility:hidden}
+div,h1,h2,h3,h4,h5,input,td,tr,ol,ul{margin:0;padding:0}
+a img,table{border:0}
 @media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}
 }
 .fb-row{width:984px;margin:0 auto;overflow:visible}
@@ -18,13 +20,15 @@ a:hover{text-decoration:underline}
 .fb-row .fb-grid-span9{width:74.35%}
 .fb-row .fb-grid-span12{width:100%}
 .fb-row .fb-grid-span3,.fb-row .fb-grid-span4,.fb-row .fb-grid-span6,.fb-row .fb-grid-span8,.fb-row .fb-grid-span9,.fb-row .fb-grid-span12{float:left;margin-left:2.6%}
-.fb-row .fb-grid-span3:first-child,.fb-row .fb-grid-span4:first-child,.fb-row .fb-grid-span6:first-child,.fb-row .fb-grid-span8:first-child,.fb-row .fb-grid-span9:first-child,.fb-row .fb-grid-span12:first-child{margin-left:0}
+.fb-row .fb-grid-span3:first-child,.fb-row .fb-grid-span4:first-child,.fb-row .fb-grid-span6:first-child,.fb-row .fb-grid-span8:first-child,.fb-row .fb-grid-span9:first-child,.fb-row .fb-grid-span12{margin-left:0}
 .fb-grid-span3 .fb-row,.fb-grid-span4 .fb-row,.fb-grid-span6 .fb-row,.fb-grid-span8 .fb-row,.fb-grid-span9 .fb-row,.fb-grid-span12 .fb-row{width:100%}
 @media screen and (max-width: 1000px){
 .fb-row{width:100%;margin:0}
 }
 @media screen and (max-width: 700px){
-.fb-row .fb-grid-span3,.fb-row .fb-grid-span4,.fb-row .fb-grid-span6,.fb-row .fb-grid-span8,.fb-row .fb-grid-span9,.fb-row .fb-grid-span12{width:100%;margin:0}
+.fb-row .fb-grid-span3,.fb-row .fb-grid-span4,.fb-row .fb-grid-span6,.fb-row .fb-grid-span8,.fb-row .fb-grid-span9,.fb-row .fb-grid-span12{width:100%;margin-left:0}
+.fb-row div{margin-bottom:6px}
+.fb-row div:last-child{margin-bottom:0}
 }
 .fb-btn{font-family:inherit;font-weight:bold;line-height:1;text-align:center;text-decoration:none;outline:none;padding:0;margin:0 2px 0 0;border:0;display:inline-block;white-space:nowrap;vertical-align:middle;background:transparent;cursor:pointer;box-shadow:0 2px 1px -2px rgba(0,0,0,0.65)}
 .fb-btn:hover,.fb-btn:focus{box-shadow:0 2px 1px -2px rgba(0,0,0,0.45);outline:thin}
