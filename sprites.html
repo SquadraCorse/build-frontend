@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-        <title>FB: Footer</title>
+        <title>FB: Grid</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         
         <!-- MAIN CSS -->
@@ -51,41 +51,43 @@
 
 <div class="fb-row">
 
-	<h1 class="docs-title">Footer</h1>
-	<div class="docs-intro">Generic footer</div>
+	<h1 class="docs-title">Grid</h1>
+	<div class="docs-intro">Main responsive grid</div>
 
 </div>
 
 
 <div class="docs-example">
 
+<style>
+    /* for demo code only */
+    .docs-sprite-carriers .fb-icon-carrier,
+    .docs-sprite-carriers .fb-icon-carrier-small { float: left; border: 1px solid #eee; margin: 0 10px 10px 0; }
 
-<div class="fb-footer">
+</style>
 
-	<div class="fb-footer-carriers-wrapper">
-		
-		<ul class="fb-footer-carriers">
-			<li class="fb-footer-carrier"><span class="fb-icon-carrier fb-icon-carrier-KL">KLM</span></li>
-			<li class="fb-footer-carrier"><span class="fb-icon-carrier fb-icon-carrier-AF">Airfrance</span></li>	
-			<li class="fb-footer-carrier"><span class="fb-icon-carrier fb-icon-carrier-PE">Air Europe</span></li>
-			<li class="fb-footer-carrier"><span class="fb-icon-carrier fb-icon-carrier-RO">Tarom</span></li>
-		</ul>
+<div class="fb-row docs-sprite-carriers">
 
-        
-        
-	</div>
+    <h2>Carrier sprite normal</h2>
 
-	<div class="fb-footer-wrapper">
+    <p class="fb-clear">
+        <span class="fb-icon-carrier fb-icon-carrier-KL"></span>
+        <span class="fb-icon-carrier fb-icon-carrier-AF"></span>
+        <span class="fb-icon-carrier fb-icon-carrier-PE"></span>
+        <span class="fb-icon-carrier fb-icon-carrier-RO"></span>
+    </p>
 
-		<div class="fb-footer-notice">
-			NOTICE
-		</div>
-		<div class="fb-footer-copyright">
-			COPYRIGHT PRIVACY
-		</div>
-	</div>
+    <h2>Carrier sprite small</h2>
+
+    <p class="fb-clear">
+        <span class="fb-icon-carrier-small fb-icon-carrier-small-KL"></span>
+        <span class="fb-icon-carrier-small fb-icon-carrier-small-AF"></span>
+        <span class="fb-icon-carrier-small fb-icon-carrier-small-PE"></span>
+        <span class="fb-icon-carrier-small fb-icon-carrier-small-RO"></span>
+    </p>
 
 </div>
+
 </div>
 
 <p id="docs-bottom" class="docs-footer">&copy; 2014 All rights reserved. FB. </p>
