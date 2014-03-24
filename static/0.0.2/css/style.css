@@ -1,6 +1,5 @@
-body,html{padding:0;margin:0}
-html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
-body{color:#333;font:12px/1.5 verdana, arial;background:#fff}
+html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;margin:0}
+body{color:#333;font:12px/1.5 verdana, arial;background:#fff;padding:10px 0 0 0;margin:0}
 a,a:visited{color:#042452;text-decoration:none}
 a:hover{text-decoration:underline}
 .fb-clear:before,.fb-clear:after,.fb-row:before,.fb-row:after{content:" ";display:table}
@@ -9,6 +8,10 @@ a:hover{text-decoration:underline}
 .fb-hidden{display:none !important;visibility:hidden}
 div,h1,h2,h3,h4,h5,input,td,tr,ol,ul{margin:0;padding:0}
 a img,table{border:0}
+.fb-logo{width:234px}
+@media screen and (max-width: 480px){
+.fb-logo{width:162px}
+}
 @media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}
 }
 .fb-row{width:984px;margin:0 auto;overflow:visible}

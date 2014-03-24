@@ -41,7 +41,7 @@
 	
 	    <li><a href="footer.html" class="docs-menu-item">STYLE: footer</a></li>
 	
-	    <li><a href="sprites.html" class="docs-menu-item">Sprites</a></li>
+	    <li><a href="sprites.html" class="docs-menu-item">Sprites &amp;amp; images</a></li>
 	
 	    <li><a href="window-events.html" class="docs-menu-item">Window Events</a></li>
 	
@@ -83,7 +83,7 @@
 
 <script>
 	require(["fb/img-responsive"], function ($Image) {
-		$Image.init({container: '#docs-img-example', treshold: 300});
+		$Image.init({container: '#docs-img-example', threshold: 300});
 	});
 </script>
 
@@ -109,12 +109,12 @@
 
 <h2>Start</h2>
 
-<p>You can start the module by requiring it and give it the container the images are in (or leave it blank so module will look in whole document), and overrule the treshold for loading lazy images.</p>
+<p>You can start the module by requiring it and give it the container the images are in (or leave it blank so module will look in whole document), and overrule the threshold for loading lazy images.</p>
 
 <code>
 &lt;script&gt;<br />
 &nbsp;&nbsp;require([&quot;fb/img-responsive&quot;], function ($Image) {<br />
-&nbsp;&nbsp;&nbsp;&nbsp;$Image.init({container: '#docs-img-example', treshold: 300});<br />
+&nbsp;&nbsp;&nbsp;&nbsp;$Image.init({container: '#docs-img-example', threshold: 300});<br />
 &nbsp;&nbsp;});<br />
 &lt;/script&gt;<br />
 </code>
