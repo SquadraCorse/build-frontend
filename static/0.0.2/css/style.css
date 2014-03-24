@@ -6,8 +6,9 @@ a:hover{text-decoration:underline}
 .fb-clear:after,.fb-row:after{clear:both}
 .lt-ie8 .fb-clear,.lt-ie8 .fb-row{zoom:1}
 .fb-hidden{display:none !important;visibility:hidden}
-div,h1,h2,h3,h4,h5,input,td,tr,ol,ul{margin:0;padding:0}
+div,p,h1,h2,h3,h4,h5,input,td,tr,ol,ul{margin:0;padding:0}
 a img,table{border:0}
+p{margin-bottom:1em}
 .fb-logo{width:234px}
 @media screen and (max-width: 480px){
 .fb-logo{width:162px}
@@ -52,6 +53,20 @@ a img,table{border:0}
 .fb-btn:hover,.fb-btn:focus{box-shadow:0 2px 1px -2px rgba(0,0,0,0.45);outline:thin}
 .fb-btn:active{box-shadow:none}
 .fb-btn span{display:inline-block;padding:6px 10px;border-radius:4px;font-size:21px;color:#042452;border:1px #DDE3E7 solid;background:#edf2f7;background:-moz-linear-gradient(top, #fefefe 0%, #edf2f6 33%, #edf2f7 92%);background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe), color-stop(33%, #edf2f6), color-stop(92%, #edf2f7));background:-webkit-linear-gradient(top, #fefefe 0%, #edf2f6 33%, #edf2f7 92%);background:-o-linear-gradient(top, #fefefe 0%, #edf2f6 33%, #edf2f7 92%);background:-ms-linear-gradient(top, #fefefe 0%, #edf2f6 33%, #edf2f7 92%);background:linear-gradient(to bottom, #fefefe 0%, #edf2f6 33%, #edf2f7 92%);*background:#edf2f7;background:#edf2f7 \9}
+::-ms-reveal,::-ms-clear{display:none !important}
+.fb-login-wrapper{width:364px}
+.fb-login-field{background-color:#fff;border:2px solid #ccc;border-radius:4px;font-size:14px;margin:0 -2px;padding:10px 4%;position:relative;width:92%;-moz-appearance:none;-webkit-appearance:none}
+.fb-login-field:focus{border-color:#0088cc;outline:transparent;z-index:2}
+.fb-login-field-username{border-bottom-left-radius:0;border-bottom-right-radius:0;margin-bottom:-2px}
+.fb-login-field-password{border-top-left-radius:0;border-top-right-radius:0;width:66%;padding-right:30%}
+.fb-input-password-wrapper{position:relative}
+.fb-input-password-switch{position:absolute;right:5px;top:10px;height:20px;z-index:5;color:#24A1DB;display:none;text-align:right;border:0;background-color:transparent;outline:0;cursor:pointer}
+.fb-input-password-switch:hover{text-decoration:underline}
+.js-fb-password-show .fb-input-password-switch{display:block}
+@media screen and (max-width: 480px){
+.fb-login-wrapper{width:90%;margin:0 5%}
+.fb-login-field{font-size:16px}
+}
 .js .fb-img-lazy,.fb-img-reset-me-container{position:relative;height:0;overflow:hidden;display:block}
 .fb-img-native,.fb-img-replace-me{width:100%}
 .js-fb-img{opacity:1;-webkit-transition:opacity 0.5s ease;-moz-transition:opacity 0.5s;transition:opacity 0.5s}
