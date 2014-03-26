@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-        <title>FB: Welcome</title>
+        <title>FB: Style Components</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         
         <!-- MAIN CSS -->
@@ -59,8 +59,8 @@
 
 <div class="fb-row">
 
-	<h1 class="docs-title">Welcome</h1>
-	<div class="docs-intro">Official documentation for continuous integration and delivery of front-end components for FB. Documentation, Testing and Guidelines.</div>
+	<h1 class="docs-title">Style Components</h1>
+	<div class="docs-intro">Style elements like typography and buttons.</div>
 
 </div>
 
@@ -69,35 +69,37 @@
 
 
 <div class="fb-row">
+	<div class="fb-row-indent">
+		<div class="fb-grid-span12">
 
-<ul class="docs-index-menu">
-	
-	    <li><a href="master-template.html" class="docs-menu-item">Master Template</a></li>
-	
-	    <li><a href="typography.html" class="docs-menu-item">STYLE: Typhography</a></li>
-	
-	    <li><a href="grid.html" class="docs-menu-item">STYLE: Grid</a></li>
-	
-	    <li><a href="footer.html" class="docs-menu-item">STYLE: Footer</a></li>
-	
-	    <li><a href="forms.html" class="docs-menu-item">STYLE: Form</a></li>
-	
-	    <li><a href="sprites.html" class="docs-menu-item">STYLE: Sprites &amp; images</a></li>
-	
-	    <li><a href="responsive-image.html" class="docs-menu-item">COMP: Responsive Image</a></li>
-	
-	    <li><a href="window-events.html" class="docs-menu-item">COMP: Window Events</a></li>
-	
-	    <li><a href="pubsub.html" class="docs-menu-item">COMP: Pubsub</a></li>
-	
-	    <li><a href="libraries.html" class="docs-menu-item">Libraries</a></li>
-	
-	    <li><a href="index.html" class="docs-menu-item">Home</a></li>
-	
-</ul>
+<h2 class="fb-h4">Buttons</h2>
+
+<p>
+	<button class="fb-btn"><span>Default button</span></button>
+</p>
+
+<p>
+	<a href="#" class="fb-btn"><span>Default button</span></a>
+</p> 
 
 
+<h3 class="fb-h4">Login form</h3>
+
+<div class="fb-login-wrapper">
+  <input type="text" class="fb-login-field fb-login-field-username" placeholder="Gebruikersnaam" />
+  <input type="password" class="fb-login-field fb-login-field-password" placeholder="Wachtwoord" />
 </div>
+
+
+		</div>
+	</div>
+</div>
+
+<script>
+	require(["fb/form-login"], function ($login) {
+		$login.init({container: '.fb-login-field-password'});
+	});
+</script>
 </div>
 
 <p id="docs-bottom" class="docs-footer">&copy; 2014 All rights reserved. FB. </p>
