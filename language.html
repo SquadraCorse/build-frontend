@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-        <title>LE: Footer</title>
+        <title>LE: Language selector</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         
         <!-- MAIN CSS -->
@@ -61,8 +61,8 @@
 
 <div class="fb-row">
 
-	<h1 class="docs-title">Footer</h1>
-	<div class="docs-intro">Generic footer</div>
+	<h1 class="docs-title">Language selector</h1>
+	<div class="docs-intro">Module language selector. Load module only when user clicks on it, using generic initcomponents. Then initialize it and build the UX.</div>
 
 </div>
 
@@ -70,31 +70,34 @@
 <div class="docs-example">
 
 
-<div class="fb-footer">
 
-	<div class="fb-footer-carriers-wrapper">
-		
-		<ul class="fb-footer-carriers">
-			<li class="fb-footer-carrier"><span class="fb-icon-carrier fb-icon-carrier-KL">KLM</span></li>
-			<li class="fb-footer-carrier"><span class="fb-icon-carrier fb-icon-carrier-AF">Airfrance</span></li>	
-			<li class="fb-footer-carrier"><span class="fb-icon-carrier fb-icon-carrier-PE">Air Europe</span></li>
-			<li class="fb-footer-carrier"><span class="fb-icon-carrier fb-icon-carrier-RO">Tarom</span></li>
-		</ul>
+<div class="fb-row docs-fb-row">
+    <div class="fb-grid-span12">
 
-        
-        
-	</div>
+        <p>
+        <a href="#" class="js-fb-init js-fb-select-language" 
+            data-components='[{
+                "path": "fb/select-language",
+                "initOn": "click",
+                "lang": "nl"
+            }]'>Select language</a>
+        </p>
 
-	<div class="fb-footer-wrapper">
+        <p>
+        DONE:
+        - start main application when user clicks on button
+        </p>
 
-		<div class="fb-footer-notice">
-			NOTICE
-		</div>
-		<div class="fb-footer-copyright">
-			COPYRIGHT PRIVACY
-		</div>
-	</div>
+        <p>
+        TODO: 
+        - introduce i18n labelsheet used for JavaScript.
+        - create panel to show our UX
+        - feed container with use of json
+        - create sprite using all flags
+        - make it behave responsive
+        </p>
 
+    </div>
 </div>
 </div>
 
