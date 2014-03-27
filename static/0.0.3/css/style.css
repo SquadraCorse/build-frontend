@@ -51,14 +51,14 @@ p{margin-bottom:1em}
 .fb-column-text-2,.fb-column-text-3{-webkit-column-count:1;-moz-column-count:1;column-count:1}
 }
 .fb-row{width:984px;margin:0 auto;overflow:visible}
-.fb-row-indent{padding-left:1.8%;padding-right:1.8%}
-.fb-row .fb-grid-span3{width:23.05%}
-.fb-row .fb-grid-span4{width:31.6%}
-.fb-row .fb-grid-span6{width:48.7%}
-.fb-row .fb-grid-span8{width:65.8%}
-.fb-row .fb-grid-span9{width:74.35%}
+.fb-row-indent{padding-left:1.6%;padding-right:1.6%}
+.fb-row .fb-grid-span3{width:23.8%}
+.fb-row .fb-grid-span4{width:32.26%}
+.fb-row .fb-grid-span6{width:49.2%}
+.fb-row .fb-grid-span8{width:66.13%}
+.fb-row .fb-grid-span9{width:74.6%}
 .fb-row .fb-grid-span12{width:100%}
-.fb-row .fb-grid-span3,.fb-row .fb-grid-span4,.fb-row .fb-grid-span6,.fb-row .fb-grid-span8,.fb-row .fb-grid-span9,.fb-row .fb-grid-span12{float:left;margin-left:2.6%}
+.fb-row .fb-grid-span3,.fb-row .fb-grid-span4,.fb-row .fb-grid-span6,.fb-row .fb-grid-span8,.fb-row .fb-grid-span9,.fb-row .fb-grid-span12{float:left;margin-left:1.6%}
 .fb-row .fb-grid-span3:first-child,.fb-row .fb-grid-span4:first-child,.fb-row .fb-grid-span6:first-child,.fb-row .fb-grid-span8:first-child,.fb-row .fb-grid-span9:first-child,.fb-row .fb-grid-span12{margin-left:0}
 .fb-grid-span3 .fb-row,.fb-grid-span4 .fb-row,.fb-grid-span6 .fb-row,.fb-grid-span8 .fb-row,.fb-grid-span9 .fb-row,.fb-grid-span12 .fb-row{width:100%}
 @media screen and (max-width: 1000px){
@@ -66,8 +66,7 @@ p{margin-bottom:1em}
 }
 @media screen and (max-width: 700px){
 .fb-row .fb-grid-span3,.fb-row .fb-grid-span4,.fb-row .fb-grid-span6,.fb-row .fb-grid-span8,.fb-row .fb-grid-span9,.fb-row .fb-grid-span12{width:100%;margin-left:0}
-.fb-row div{margin-bottom:6px}
-.fb-row div:last-child{margin-bottom:0}
+.fb-row .fb-grid-span3,.fb-row .fb-grid-span4,.fb-row .fb-grid-span6,.fb-row .fb-grid-span8,.fb-row .fb-grid-span9,.fb-row .fb-grid-span12{margin-bottom:6px}
 }
 .fb-nav{background:#042453;background:rgba(4,36,83,0.9);color:#fff;padding:5px;margin:0 0 20px 0}
 .fb-btn{font-family:inherit;font-weight:bold;line-height:1;text-align:center;text-decoration:none;outline:none;padding:0;margin:0 2px 0 0;border:0;display:inline-block;white-space:nowrap;vertical-align:middle;background:transparent;cursor:pointer;box-shadow:0 2px 1px -2px rgba(0,0,0,0.65)}
@@ -77,14 +76,14 @@ p{margin-bottom:1em}
 ::-ms-reveal,::-ms-clear{display:none !important}
 .fb-login-wrapper{width:364px}
 .fb-login-field{background-color:#fff;border:2px solid #ccc;margin:0 -2px;padding:10px 4%;border-radius:4px;font-size:14px;position:relative;width:92%;-moz-appearance:none;-webkit-appearance:none}
-.fb-login-field:focus{border-color:#0088cc;outline:transparent;z-index:2}
+.fb-login-field:focus{border-color:#24a1db;outline:transparent;z-index:2}
 .fb-login-field-username{border-bottom-left-radius:0;border-bottom-right-radius:0;margin-bottom:-2px}
 .fb-login-field-password{border-top-left-radius:0;border-top-right-radius:0;width:80%;padding-right:16%}
 .fb-input-password-wrapper{position:relative}
 .fb-input-password-switch{position:absolute;top:8px;right:5px;height:20px;z-index:4;color:#ddd;display:none;text-align:right;border:0;background-color:transparent;outline:0;cursor:pointer;font-size:18px}
 .fb-input-password-switch:hover{opacity:0.9}
 .js-fb-password-show .fb-input-password-switch{display:block}
-.fb-input-password-wrapper .fb-toggled-text{color:#24A1DB}
+.fb-input-password-wrapper .fb-toggled-text{color:#24a1db}
 @media screen and (max-width: 480px){
 .fb-login-wrapper{width:100%;margin:0}
 .fb-login-field{font-size:16px}
