@@ -47,6 +47,8 @@
 	
 	    <li><a href="responsive-image.html" class="docs-menu-item">COMP: Responsive Image</a></li>
 	
+	    <li><a href="language.html" class="docs-menu-item">COMP: Select language</a></li>
+	
 	    <li><a href="window-events.html" class="docs-menu-item">COMP: Window Events</a></li>
 	
 	    <li><a href="pubsub.html" class="docs-menu-item">COMP: Pubsub</a></li>
@@ -68,33 +70,6 @@
 <div class="docs-example">
 
 
-<div class="fb-row">
-    <div class="fb-row-indent">
-        <div class="fb-grid-span12">
-
-<h2 class="fb-h4">Buttons</h2>
-
-<p>
-    <button class="fb-btn"><span>Default button</span></button>
-</p>
-
-<p>
-    <a href="#" class="fb-btn"><span>Default button</span></a>
-</p> 
-
-
-<h3 class="fb-h4">Login form</h3>
-
-<div class="fb-login-wrapper">
-  <input type="text" class="fb-login-field fb-login-field-username" placeholder="Gebruikersnaam" />
-  <input type="password" class="fb-login-field fb-login-field-password" placeholder="Wachtwoord" />
-</div>
-
-
-        </div>
-    </div>
-</div>
-
 <script>
     // TODO: THIS COMES FROM CMS OR INNERLINE
     define("fb/nls/generic", {
@@ -103,15 +78,46 @@
             "hide" : "Hide"
         }
     });
-
-    // SAMPLE OWN APP
-    require(["fb/form-login"], function ($login) {
-        $login.init({container: '.fb-login-field-password'});
-    });
 </script>
+
+
+<div class="fb-row">
+    <div class="fb-row-indent">
+        <div class="fb-grid-span12">
+
+            <h2 class="fb-h4">Buttons</h2>
+
+            <p>
+                <button class="fb-btn"><span>Default button</span></button>
+            </p>
+
+            <p>
+                <a href="#" class="fb-btn"><span>Default button</span></a>
+            </p> 
+
+
+
+            <h3 class="fb-h4">Login form</h3>
+
+            <div class="fb-login-wrapper">
+              <input type="text" class="fb-login-field fb-login-field-username" placeholder="Gebruikersnaam" />
+              <input type="password" class="fb-login-field fb-login-field-password js-fb-init" placeholder="Wachtwoord" data-path="fb/form-login" />
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
 </div>
 
 <p id="docs-bottom" class="docs-footer">&copy; 2014 All rights reserved. FB. </p>
+
+
+<script>
+	require(['fb/start']);
+</script>
 
 </body>
 </html>
