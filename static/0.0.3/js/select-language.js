@@ -1,1 +1,1 @@
-define("fb/select-language",["fb/jquery"],function(e){var t=function(t){t.preventDefault(),e(".docs-intro").append("bar... ")},n=function(n,r){e(".docs-intro").append("foo..."+r.lang+" "),n.on("click",t),t()};return{init:n}});
+define("fb/select-language",["fb/jquery"],function(e){var t=function(){e(".docs-intro").append("bar... ")},n=function(e){e.preventDefault(),t()},r=function(r,i){e(".docs-intro").append("foo..."+i.lang+" "),r.on("click",n),t()};return{init:r}});

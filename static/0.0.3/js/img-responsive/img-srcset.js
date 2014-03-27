@@ -1,1 +1,311 @@
-define([],function(){function n(e){this.src=e.src,this.w=e.w||Infinity,this.h=e.h||Infinity,this.x=e.x||1}var e={w:window.innerWidth||document.documentElement.clientWidth,h:window.innerHeight||document.documentElement.clientHeight,x:window.devicePixelRatio},t=function(t){e.w=t.width,e.h=t.height},r=/^[0-9]+$/,i=function(e){var t=e.split(/\s/),n={};for(var i=0,s=t.length;i<s;i++){var o=t[i];if(o.length>0){var u=o.slice(-1),a=o.substring(0,o.length-1),f=parseInt(a,10),l=parseFloat(a);a.match(r)&&u==="w"?n[u]=f:a.match(r)&&u==="h"?n[u]=f:!isNaN(l)&&u==="x"&&(n[u]=l)}}return n},s=function(e,t){var n=e[0];for(var r=0,i=e.length;r<i;r++){var s=e[r];t(s,n)&&(n=s)}return n},o=function(e,t){for(var n=e.length-1;n>=0;n--){var r=e[n];t(r)&&e.splice(n,1)}return e},u=function(t,n){if(!t)return;var r=t.slice(0),i=n||e.w,u=s(r,function(e,t){return e.w>t.w});o(r,function(){return function(e){return e.w<i}}(this)),r.length===0&&(r=[u]);var a=s(r,function(e,t){return e.h>t.h});o(r,function(){return function(t){return t.h<e.h}}(this)),r.length===0&&(r=[a]);var f=s(r,function(e,t){return e.x>t.x});o(r,function(){return function(t){return t.x<e.x}}(this)),r.length===0&&(r=[f]);var l=s(r,function(e,t){return e.w<t.w});o(r,function(e){return e.w>l.w});var c=s(r,function(e,t){return e.h<t.h});o(r,function(e){return e.h>c.h});var h=s(r,function(e,t){return e.x<t.x});return o(r,function(e){return e.x>h.x}),r[0]},a=function(e){var t=[],r=e.src,s=e.srcset,o=e.width;if(!s)return;var a=function(e){for(var n=0,r=t.length;n<r;n++){var i=t[n];if(i.x===e.x&&i.w===e.w&&i.h===e.h)return}t.push(e)},f=function(){var e=s,t=0,o=[],u,f;while(e!==""){while(e.charAt(0)===" ")e=e.slice(1);t=e.indexOf(" ");if(t!==-1){u=e.slice(0,t);if(u==="")break;e=e.slice(t+1),t=e.indexOf(","),t===-1?(f=e,e=""):(f=e.slice(0,t),e=e.slice(t+1)),o.push({url:u,descriptors:f})}else o.push({url:e,descriptors:""}),e=""}for(var l=0,c=o.length;l<c;l++){var h=o[l],p=i(h.descriptors);a(new n({src:h.url,x:p.x,w:p.w,h:p.h}))}r&&a(new n({src:r}))};f();var l=u(t,o),c={best:l,candidates:t};return t=null,c};return{get:a,image:u,setView:t}});
+define([], function () {
+
+    "use strict";
+
+    /**
+     * For other applications wanting the srccset/best image approach it is possible to use this module only
+     * Loosely based on https://raw.github.com/borismus/srcset-polyfill/master/js/srcset-info.js
+     */
+
+
+    // OUR VIEWPORT
+    var view = {
+        'w' : window.innerWidth || document.documentElement.clientWidth,
+        'h' : window.innerHeight || document.documentElement.clientHeight,
+        'x' : window.devicePixelRatio
+    };
+
+    // MODULE CAN OVERRULE THIS ON RESIZE
+    var setView = function (obj) {
+        view.w  = obj.width;
+        view.h = obj.height;
+    };
+
+    // SRCSET IMG OBJECT
+    function ImageInfo(options) {
+        this.src = options.src;
+        this.w = options.w || Infinity;
+        this.h = options.h || Infinity;
+        this.x = options.x || 1;
+    }
+
+    var INT_REGEXP = /^[0-9]+$/;
+
+
+    /**
+     * Parse srcset rules
+     * @param  {string} descString Containing all srcset rules
+     * @return {object}            Srcset rules
+     */
+    var _parseDescriptors = function (descString) {
+
+        var descriptors = descString.split(/\s/);
+        var out = {};
+
+        for (var i = 0, l = descriptors.length; i < l; i++) {
+
+            var desc = descriptors[i];
+
+            if (desc.length > 0) {
+
+                var lastChar = desc.slice(-1);
+                var value = desc.substring(0, desc.length - 1);
+                var intVal = parseInt(value, 10);
+                var floatVal = parseFloat(value);
+
+                if (value.match(INT_REGEXP) && lastChar === 'w') {
+                    out[lastChar] = intVal;
+                } else if (value.match(INT_REGEXP) && lastChar === 'h') {
+                    out[lastChar] = intVal;
+                } else if (!isNaN(floatVal) && lastChar === 'x') {
+                    out[lastChar] = floatVal;
+                } else {
+                    // ALERT ERROR
+                }
+            }
+        }
+
+        return out;
+
+    };
+
+    /**
+     * Returns best candidate under given circumstances
+     * @param  {object} images     Candidate image
+     * @param  {function} criteriaFn Rule
+     * @return {object}            Returns best candidate under given criteria
+     */
+    var _getBestCandidateIf = function (images, criteriaFn) {
+
+        var bestCandidate = images[0];
+
+        for (var i = 0, l = images.length; i < l; i++) {
+            var candidate = images[i];
+            if (criteriaFn(candidate, bestCandidate)) {
+                bestCandidate = candidate;
+            }
+        }
+
+        return bestCandidate;
+
+    };
+
+    /**
+     * Remove candidate under given circumstances
+     * @param  {object} images     Candidate image
+     * @param  {function} criteriaFn Rule
+     * @return {object}            Removes images from global image collection (candidates)
+     */
+    var _removeCandidatesIf = function (images, criteriaFn) {
+
+        for (var i = images.length - 1; i >= 0; i--) {
+            var candidate = images[i];
+            if (criteriaFn(candidate)) {
+                images.splice(i, 1); // remove it
+            }
+        }
+
+        return images;
+
+    };
+  
+    /**
+    * Direct implementation of "processing the image candidates":
+    * http://www.whatwg.org/specs/web-apps/current-work/multipage/embedded-content-1.html#processing-the-image-candidates
+    *
+    * @returns {ImageInfo} The best image of the possible candidates.
+    */
+    var getBestImage = function (imageCandidates, w) {
+
+        if (!imageCandidates) { return; }
+
+        var images = imageCandidates.slice(0);
+
+        // WIDTH CAN BE GIVEN BY MODULE
+        var width = w || view.w;
+
+        /* LARGEST */
+        // Width
+        var largestWidth = _getBestCandidateIf(images, function (a, b) { return a.w > b.w; });
+        // Less than client width.
+        _removeCandidatesIf(images, (function () { return function (a) { return a.w < width; }; })(this));
+        // If none are left, keep the one with largest width.
+        if (images.length === 0) { images = [largestWidth]; }
+
+
+        // Height
+        var largestHeight = _getBestCandidateIf(images, function (a, b) { return a.h > b.h; });
+        // Less than client height.
+        _removeCandidatesIf(images, (function () { return function (a) { return a.h < view.h; }; })(this));
+        // If none are left, keep one with largest height.
+        if (images.length === 0) { images = [largestHeight]; }
+
+        // Pixel density.
+        var largestPxDensity = _getBestCandidateIf(images, function (a, b) { return a.x > b.x; });
+        // Remove all candidates with pxdensity less than client pxdensity.
+        _removeCandidatesIf(images, (function () { return function (a) { return a.x < view.x; }; })(this));
+        // If none are left, keep one with largest pixel density.
+        if (images.length === 0) { images = [largestPxDensity]; }
+
+
+        /* SMALLEST */
+        // Width
+        var smallestWidth = _getBestCandidateIf(images, function (a, b) { return a.w < b.w; });
+        // Remove all candidates with width greater than it.
+        _removeCandidatesIf(images, function (a) { return a.w > smallestWidth.w; });
+
+        // Height
+        var smallestHeight = _getBestCandidateIf(images, function (a, b) { return a.h < b.h; });
+        // Remove all candidates with height greater than it.
+        _removeCandidatesIf(images, function (a) { return a.h > smallestHeight.h; });
+
+        // Pixel density
+        var smallestPxDensity = _getBestCandidateIf(images, function (a, b) { return a.x < b.x; });
+        // Remove all candidates with pixel density less than smallest px density.
+        _removeCandidatesIf(images, function (a) { return a.x > smallestPxDensity.x; });
+
+        return images[0];
+
+    };
+
+
+
+    // MODULE
+    // options {src: null/string, srcset: string}
+    // options.src    normal url or null
+    // options.srcset 997-s.jpg 480w, 997-m.jpg 768w, 997-xl.jpg 1x
+    var getSrcset = function (options) {
+
+        var imageCandidates = [];
+
+        var srcValue = options.src;
+        var srcsetValue = options.srcset;
+        var width = options.width;
+
+        if (!srcsetValue) { return; }
+
+        /* PUSH CANDIDATE [{src: _, x: _, w: _, h:_}, ...] */
+        var _addCandidate = function (img) {
+
+            for (var j = 0, ln = imageCandidates.length; j < ln; j++) {
+                var existingCandidate = imageCandidates[j];
+
+                // DUPLICATE
+                if (existingCandidate.x === img.x &&
+                    existingCandidate.w === img.w &&
+                    existingCandidate.h === img.h) { return; }
+            }
+
+            imageCandidates.push(img);
+
+        };
+
+
+        var _parse = function () {
+
+            var input = srcsetValue,
+            position = 0,
+            rawCandidates = [],
+            url,
+            descriptors;
+
+            while (input !== '') {
+
+                while (input.charAt(0) === ' ') {
+                    input = input.slice(1);
+                }
+
+                position = input.indexOf(' ');
+
+                if (position !== -1) {
+
+                    url = input.slice(0, position);
+
+                    if (url === '') { break; }
+
+                    input = input.slice(position + 1);
+
+                    position = input.indexOf(',');
+
+                    if (position === -1) {
+                        descriptors = input;
+                        input = '';
+                    } else {
+                        descriptors =  input.slice(0, position);
+                        input = input.slice(position + 1);
+                    }
+
+                    rawCandidates.push({
+                        url: url,
+                        descriptors: descriptors
+                    });
+
+                } else {
+
+                    rawCandidates.push({
+                        url: input,
+                        descriptors: ''
+                    });
+                    input = '';
+                }
+
+            }
+
+            // FROM RAW CANDIDATES PUSH IMAGES TO COMPLETE SET
+            for (var i = 0, l = rawCandidates.length; i < l; i++) {
+
+                var candidate = rawCandidates[i],
+                desc = _parseDescriptors(candidate.descriptors);
+
+                _addCandidate(new ImageInfo({
+                    src: candidate.url,
+                    x: desc.x,
+                    w: desc.w,
+                    h: desc.h
+                }));
+
+            }
+
+            if (srcValue) {
+                _addCandidate(new ImageInfo({src: srcValue}));
+            }
+
+        };
+
+        _parse();
+
+
+        // RETURN BEST IMAGE FROM COMPLETE SET
+        var bestImage = getBestImage(imageCandidates, width);
+
+        /**
+         * Object returning best match at moment, and total collection of candidates (so 'image' API can be used by consumer)
+         * @type {Object}
+         */
+        var object = {
+            'best': bestImage,              // IMAGE INFORMATION WHICH FITS BEST WHEN API IS REQUESTED
+            'candidates': imageCandidates   // ALL IMAGE CANDIDATES BY GIVEN SRCSET ATTRIBUTES
+        };
+
+
+        // empty collection
+        imageCandidates = null;
+
+        // pass best match and candidates
+        return object;
+
+    };
+
+
+
+    /**
+     * PUBLIC API
+     */
+    return {
+        get: getSrcset,         // RETURNS BEST IMAGE AND IMAGE CANDIDATES
+        image: getBestImage,    // RETURNS BEST IMAGE WITH GIVEN CANDIDATES
+        setView: setView
+    };
+
+
+});
