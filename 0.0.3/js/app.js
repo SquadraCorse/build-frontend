@@ -1,0 +1,1 @@
+require(["fb/img-responsive","fb/initcomponents"],function(e,t){e.init({threshold:300}),t.components([{className:"js-fb-init"}])}),define("fb/app",function(){});
