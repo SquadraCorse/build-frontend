@@ -139,7 +139,7 @@ a.fb-menu-current{color:#e56a05}
 .fb-header-row{background-color:#fff}
 }
 .fb-header{margin-bottom:10px}
-.fb-header-visual{position:relative;height:auto !important;height:340px;min-height:340px}
+.fb-header-visual{position:relative;height:auto !important;height:420px;min-height:420px}
 .fb-header-row{padding-top:20px;background-color:#fff}
 .fb-header-logo{float:left;width:60%}
 .fb-nav-sticky{margin-bottom:50px}
@@ -152,7 +152,7 @@ a.fb-menu-current{color:#e56a05}
 .fb-theme-cta{margin-top:110px}
 .fb-nav-sticky .fb-theme-cta{margin-top:172px}
 }
-body{background-position:50% 80px;background-repeat:no-repeat}
+body{background-position:50% 100px;background-repeat:no-repeat}
 body.js-fb-visual--true{background-color:#eee}
 @media screen and (max-width: 480px){
 body{background-position:center 0}
