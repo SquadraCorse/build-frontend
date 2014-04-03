@@ -42,8 +42,8 @@ Q),q=q.replace(R,""),h.jsExtRegExp.test(q)&&(q=K),r.deps=r.deps?r.deps.concat(q)
 /* TODO: PATH SHOULD BE ABSOLUTE OR DIRECTLY CDN URL */
 require.config({
     paths : {
-        "fb"    : "0.0.8/js",
-        "fb-core"  : "0.0.8"
+        "fb"    : "0.0.9/js",
+        "fb-core"  : "0.0.9"
     },
 	waitSeconds: 0
 });
