@@ -10,61 +10,104 @@
 
         <title>LE: Language selector</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        
-        <!-- MAIN CSS -->
-        <link rel="stylesheet" href="0.0.3/css/style.css" />
-        <!-- DOCUMENTATION CSS ONLY!! -->
-        <link rel="stylesheet" href="0.0.3/css/docs.css" />
 
-        <!-- THEN JS, ORE MOVE BOTTOM WHEN NO OTHER JS SCRIPTS NEED TO BE PLACED HERE -->
-        <script src="0.0.3/core.js"></script>
-        <script src="0.0.3/js/bundle.js"></script>
+        <meta property="og:site_name" content="FLYINGBLUE.com" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Language selector" />
+        <meta property="og:description" content="Module language selector. Load module only when user clicks on it, using generic initcomponents. Then initialize it and build the UX." />
+        <meta property="article:author" content="Flying Blue" />
+        <meta property="og:image" content="" />
+
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="0.0.8/css/style.css" />
+
+        
+        <!-- DOCUMENTATION CSS ONLY!! -->
+        <link rel="stylesheet" href="0.0.8/css/docs.css" />
+        
+        <script src="0.0.8/core.js"></script>
+        <script>
+            var FB = FB || {};
+            FB.config = {
+                language: 'nl',
+                country: 'nl',
+                pos: 'nl'
+            };
+        </script>
+
+
 
 
     </head>
 
-<body>
+<body >
+
 
 
 <div class="docs-header docs-header-live">
-	<span class="fb-icon">FB live v0.0.3</span>
+	<span class="fb-icon">Flying-Blue live v0.0.8</span>
 	<span class="docs-main-menu" onclick="javascript:var e = document.getElementById('docs-menu'); switch(e.className){ case 'fb-hidden': e.className = ''; break; default: e.className = 'fb-hidden'; break; }">M</span>
 </div>
 
 <ul id="docs-menu" class="fb-hidden">
 	
-	    <li><a href="master-template.html" class="docs-menu-item">Master Template</a></li>
+	    <li><a href="page-home.html" class="docs-menu-item">Template: home</a></li>
 	
-	    <li><a href="typography.html" class="docs-menu-item">STYLE: Typhography</a></li>
+	    <li><a href="page-article.html" class="docs-menu-item">Template: article</a></li>
 	
-	    <li><a href="grid.html" class="docs-menu-item">STYLE: Grid</a></li>
 	
-	    <li><a href="footer.html" class="docs-menu-item">STYLE: Footer</a></li>
+	    <li><a href="grid.html" class="docs-menu-item">Grid</a></li>
 	
-	    <li><a href="forms.html" class="docs-menu-item">STYLE: Form</a></li>
+	    <li><a href="menu.html" class="docs-menu-item">Generic Header</a></li>
 	
-	    <li><a href="sprites.html" class="docs-menu-item">STYLE: Sprites &amp; images</a></li>
+	    <li><a href="footer.html" class="docs-menu-item">Footer</a></li>
 	
-	    <li><a href="responsive-image.html" class="docs-menu-item">COMP: Responsive Image</a></li>
+	    <li><a href="typography.html" class="docs-menu-item">Typography</a></li>
 	
-	    <li><a href="language.html" class="docs-menu-item">COMP: Select language</a></li>
+	    <li><a href="article.html" class="docs-menu-item">Article layouts</a></li>
 	
-	    <li><a href="window-events.html" class="docs-menu-item">COMP: Window Events</a></li>
+	    <li><a href="adds.html" class="docs-menu-item">Add</a></li>
 	
-	    <li><a href="pubsub.html" class="docs-menu-item">COMP: Pubsub</a></li>
+	    <li><a href="forms.html" class="docs-menu-item">Form</a></li>
 	
-	    <li><a href="libraries.html" class="docs-menu-item">Libraries</a></li>
+	    <li><a href="sprites.html" class="docs-menu-item">Sprites &amp; images</a></li>
+	
+	
+	    <li><a href="responsive-image.html" class="docs-menu-item">Responsive Image</a></li>
+	
+	    <li><a href="language.html" class="docs-menu-item">Select language</a></li>
+	
+	    <li><a href="measure.html" class="docs-menu-item">Measure</a></li>
+	
+	    <li><a href="my.html" class="docs-menu-item">My</a></li>
+	
 	
 	    <li><a href="index.html" class="docs-menu-item">Home</a></li>
 	
 </ul>
 
+
 <div class="fb-row">
+	<div class="fb-row-indent">
+		<div class="fb-grid-span12">
+			
+	<p><img src="0.0.8/img/flying-blue.png" class="fb-logo" alt="Flying Blue"/></p>
 
-	<h1 class="docs-title">Language selector</h1>
-	<div class="docs-intro">Module language selector. Load module only when user clicks on it, using generic initcomponents. Then initialize it and build the UX.</div>
-
+		</div>
+	</div>
 </div>
+
+
+<div class="fb-row">
+	<div class="fb-row-indent">
+		<div class="fb-grid-span12">
+			<h1 class="docs-title">Language selector</h1>
+			<div class="docs-intro">Module language selector. Load module only when user clicks on it, using generic initcomponents. Then initialize it and build the UX.</div>
+		</div>
+	</div>
+</div>
+
+
 
 
 <div class="docs-example">
@@ -101,12 +144,17 @@
 </div>
 </div>
 
-<p id="docs-bottom" class="docs-footer">&copy; 2014 All rights reserved. FB. </p>
 
 
-<script>
-	require(['fb/app']);
-</script>
+
+	<p id="docs-bottom" class="docs-footer">
+		&copy; 2014 - <a href="index.html">Home</a>  - All rights reserved Flying-Blue.
+	</p>
+
+
+
+<!-- OUR JAVASCRIPT SETUP -->
+<script src="0.0.8/js/bundle.js"></script>
 
 </body>
 </html>

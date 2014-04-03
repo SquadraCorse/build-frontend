@@ -1,1 +1,0 @@
-define("fb/select-language",["fb/jquery"],function(e){var t=function(){e(".docs-intro").append("bar... ")},n=function(e){e.preventDefault(),t()},r=function(r,i){e(".docs-intro").append("foo..."+i.lang+" "),r.on("click",n),t()};return{init:r}});

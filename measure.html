@@ -8,13 +8,13 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-        <title>LE: Pubsub</title>
+        <title>LE: Google measure</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <meta property="og:site_name" content="FLYINGBLUE.com" />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="Pubsub" />
-        <meta property="og:description" content="Pubsub can be used for cross module communication. It&#x27;s not intended for internal module usage." />
+        <meta property="og:title" content="Google measure" />
+        <meta property="og:description" content="Foo bar" />
         <meta property="article:author" content="Flying Blue" />
         <meta property="og:image" content="" />
 
@@ -101,8 +101,8 @@
 <div class="fb-row">
 	<div class="fb-row-indent">
 		<div class="fb-grid-span12">
-			<h1 class="docs-title">Pubsub</h1>
-			<div class="docs-intro">Pubsub can be used for cross module communication. It&#x27;s not intended for internal module usage.</div>
+			<h1 class="docs-title">Google measure</h1>
+			<div class="docs-intro">Foo bar</div>
 		</div>
 	</div>
 </div>
@@ -113,25 +113,35 @@
 <div class="docs-example">
 
 
-<div class="fb-row js-fb-init" data-path="fb/_docs/docs-pubsub" >
+<div class="fb-row">
+	<h2 class="fb-h3">Async Script inside page</h2>
 
-    <h2 class="fb-h3">Example module1 publishes module1.buttonclick</h2>
+	<code>
+		<p>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		</p>
 
-    <div class="module1 docs-controls">
-        <button id="module1_btn" class="fb-btn fb-btn-primary"><span>publish</span></button>
-        <button id="module1_btn_unsubscribe" class="fb-btn"><span>unsubscribe</span></button>
-    </div>
+		ga('create', 'UA-31020846-4', 'flyingblue.com');<br />
 
-    <p>log</p>
+		ga('set', 'dimension1', 'nl');<br />
+		ga('set', 'dimension2', 'NL');<br />
+		ga('set', 'dimension3', 'klm');<br />
+		
+		ga('set', 'page', '/about-flyingblue/index');<br />
+		ga('send', 'pageview');<br />
 
-    <div id="docs-log" class="docs-log">
-
-    </div>
-
+	</code>
 </div>
 
-
-
+<div class="fb-row">
+	<h2 class="fb-h3">Setup html measurement</h2>
+	<p>
+	<a href="#" class="js-fb-measure" data-measure='{"type": "hyperlink", "context": "footer", "link": "url"}'>Click me</a>
+	</p>
+</div>
 </div>
 
 

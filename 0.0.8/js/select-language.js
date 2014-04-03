@@ -1,0 +1,1 @@
+define("fb/select-language",["fb/jquery"],function(e){var t=function(){e("body").append("foo"),window.alert("CREATE LANGUAGE SELECTOR...")},n=function(e){e.preventDefault(),t()},r=function(e){e.on("click",n),t()};return{init:r}});

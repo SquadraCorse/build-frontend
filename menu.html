@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title>LE: Generic Header</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <meta property="og:site_name" content="FLYINGBLUE.com" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Generic Header" />
+        <meta property="og:description" content="Layout and behaviour main menu on all devices." />
+        <meta property="article:author" content="Flying Blue" />
+        <meta property="og:image" content="" />
+
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="0.0.8/css/style.css" />
+
+        
+        <!-- DOCUMENTATION CSS ONLY!! -->
+        <link rel="stylesheet" href="0.0.8/css/docs.css" />
+        
+        <script src="0.0.8/core.js"></script>
+        <script>
+            var FB = FB || {};
+            FB.config = {
+                language: 'nl',
+                country: 'nl',
+                pos: 'nl'
+            };
+        </script>
+
+
+
+
+    </head>
+
+<body >
+
+
+
+<div class="docs-header docs-header-live">
+	<span class="fb-icon">Flying-Blue live v0.0.8</span>
+	<span class="docs-main-menu" onclick="javascript:var e = document.getElementById('docs-menu'); switch(e.className){ case 'fb-hidden': e.className = ''; break; default: e.className = 'fb-hidden'; break; }">M</span>
+</div>
+
+<ul id="docs-menu" class="fb-hidden">
+	
+	    <li><a href="page-home.html" class="docs-menu-item">Template: home</a></li>
+	
+	    <li><a href="page-article.html" class="docs-menu-item">Template: article</a></li>
+	
+	
+	    <li><a href="grid.html" class="docs-menu-item">Grid</a></li>
+	
+	    <li><a href="menu.html" class="docs-menu-item">Generic Header</a></li>
+	
+	    <li><a href="footer.html" class="docs-menu-item">Footer</a></li>
+	
+	    <li><a href="typography.html" class="docs-menu-item">Typography</a></li>
+	
+	    <li><a href="article.html" class="docs-menu-item">Article layouts</a></li>
+	
+	    <li><a href="adds.html" class="docs-menu-item">Add</a></li>
+	
+	    <li><a href="forms.html" class="docs-menu-item">Form</a></li>
+	
+	    <li><a href="sprites.html" class="docs-menu-item">Sprites &amp; images</a></li>
+	
+	
+	    <li><a href="responsive-image.html" class="docs-menu-item">Responsive Image</a></li>
+	
+	    <li><a href="language.html" class="docs-menu-item">Select language</a></li>
+	
+	    <li><a href="measure.html" class="docs-menu-item">Measure</a></li>
+	
+	    <li><a href="my.html" class="docs-menu-item">My</a></li>
+	
+	
+	    <li><a href="index.html" class="docs-menu-item">Home</a></li>
+	
+</ul>
+
+
+<div class="fb-row">
+	<div class="fb-row-indent">
+		<div class="fb-grid-span12">
+			
+	<p><img src="0.0.8/img/flying-blue.png" class="fb-logo" alt="Flying Blue"/></p>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="fb-row">
+	<div class="fb-row-indent">
+		<div class="fb-grid-span12">
+			<h1 class="docs-title">Generic Header</h1>
+			<div class="docs-intro">Layout and behaviour main menu on all devices.</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div class="docs-example">
+
+
+<div class="fb-header">
+
+	<div class="fb-row fb-header-row">
+		<div class="fb-row-indent fb-clear">
+
+			<div class="fb-header-logo">
+				
+	<p><img src="0.0.8/img/flying-blue.png" class="fb-logo" alt="Flying Blue"/></p>
+
+			</div>
+
+		</div>
+	</div>
+
+	<div class="fb-nav">
+	<div class="fb-row fb-row-nav">
+
+		<ul class="fb-menu-icons">
+			<li><span class="fb-icon" title="mijn account inloggen">&#xe81d;</span></li>
+			<li><span class="fb-icon js-fb-icon-mobile" title="mobile menu">&#xe80f;</span></li>
+			<li><span class="fb-icon" title="zoeken">&#xe800;</span></li>
+			<li><a href="#" class="fb-icon js-fb-init js-fb-select-language" 
+            data-components='[{"path": "fb/select-language","initOn": "click"}]' title="language">&#xe810;</a></li>
+			<li><a href="index.html" class="fb-icon" title="home">&#xe805;</a></li>
+		</ul>
+
+		<!-- DONE: MAIN MENU FOR DESKTOP AND SOURCE FOR OTHER DEVICES -->
+		<ul id="fb-menu" class="fb-menu">
+			<!-- <li class="fb-menu-item">
+        		<a href="index.html" class="fb-menu-link fb-menu-iconlink"><span class="fb-icon">&#xe805;</span></a>
+			</li> -->
+			<li class="fb-menu-item">
+				<a href="foo.html" class="fb-menu-link fb-menu-link-about">Over Flying Blue</a>
+				<div class="fb-submenu">
+					<div class="fb-submenu-item">
+
+						Mijn SUBMENU
+
+						<p>
+							<a href="page-article.html" class="fb-submenu-link">Dummy article</a>
+						</p>
+
+					</div>
+				</div>
+			</li>
+			<li class="fb-menu-item">
+				<a href="foo.html" class="fb-menu-link fb-menu-current">Miles sparen</a>
+				<div class="fb-submenu">
+					<div class="fb-submenu-item">
+
+						Mijn SUBMENU
+
+						<p>
+							<a href="page-home.html" class="fb-submenu-link">Dummy home</a>
+						</p>
+
+					</div>
+				</div>
+			</li>
+			<li class="fb-menu-item">
+				<a href="foo.html" class="fb-menu-link">Miles besteden</a>
+				<div class="fb-submenu">
+					<div class="fb-submenu-item">
+
+						<!-- SUMNENU IS WIP -->
+						<div class="fb-clear">
+							<div class="fb-grid-span4 docs-fb-row">
+
+								<strong class="fb-submenu-title fb-h3">Hulp voor deelnemers</strong>
+								<ul class="fb-linklist">
+									<li><a href="page-article.html" class="fb-submenu-link">Bekijk de veelvuldig gestelde vragen (FAQ’s)</a></li>
+									<li><a href="page-article.html" class="fb-submenu-link">Werk uw profiel bij</a></li>
+								</ul>
+
+							</div>
+							<div class="fb-grid-span4 docs-fb-row">
+
+								<strong class="fb-submenu-title fb-h3">Beheer uw Miles</strong>
+								<ul class="fb-linklist">
+									<li><a href="page-article.html" class="fb-submenu-link">Bekijk uw Miles-saldo</a></li>
+									<li><a href="page-article.html" class="fb-submenu-link">Claim ontbrekende Miles</a></li>
+								</ul>
+
+							</div>
+							<div class="fb-grid-span4 docs-fb-row">
+
+								<strong class="fb-submenu-title fb-h3">Flying Blue Service Centre</strong>
+								<ul class="fb-linklist">
+									<li><a href="page-article.html" class="fb-submenu-link">Neem contact met ons op via e-mail</a></li>
+									<li><a href="page-article.html" class="fb-submenu-link">Neem contact met ons op per telefoon</a></li>
+								</ul>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</li>
+			<li class="fb-menu-item">
+				<a href="foo.html" class="fb-menu-link">Miles kopen & schenken</a>
+				<div class="fb-submenu">
+					<div class="fb-submenu-item">
+
+						Mijn SUBMENU
+
+						<p>
+							<a href="page-article.html" class="fb-submenu-link">Dummy article</a>
+						</p>
+
+					</div>
+				</div>
+			</li>
+			<li class="fb-menu-item">
+				<a href="foo.html" class="fb-menu-link">Support</a>
+				<div class="fb-submenu">
+					<div class="fb-submenu-item">
+
+						<!-- SUMNENU IS WIP -->
+						<div class="fb-clear">
+							<div class="fb-grid-span4 docs-fb-row">
+
+								<strong class="fb-submenu-title fb-h3">Hulp voor deelnemers</strong>
+								<ul class="fb-linklist">
+									<li><a href="page-article.html" class="fb-submenu-link">Bekijk de veelvuldig gestelde vragen (FAQ’s)</a></li>
+									<li><a href="page-article.html" class="fb-submenu-link">Werk uw profiel bij</a></li>
+								</ul>
+
+							</div>
+							<div class="fb-grid-span4 docs-fb-row">
+
+								<strong class="fb-submenu-title fb-h3">Beheer uw Miles</strong>
+								<ul class="fb-linklist">
+									<li><a href="page-article.html" class="fb-submenu-link">Bekijk uw Miles-saldo</a></li>
+									<li><a href="page-article.html" class="fb-submenu-link">Claim ontbrekende Miles</a></li>
+								</ul>
+
+							</div>
+							<div class="fb-grid-span4 docs-fb-row">
+
+								<strong class="fb-submenu-title fb-h3">Flying Blue Service Centre</strong>
+								<ul class="fb-linklist">
+									<li><a href="page-article.html" class="fb-submenu-link">Neem contact met ons op via e-mail</a></li>
+									<li><a href="page-article.html" class="fb-submenu-link">Neem contact met ons op per telefoon</a></li>
+								</ul>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</li>
+			<li class="fb-menu-item">
+				<a href="page-account.html" class="fb-menu-link">Mijn account</a>
+				<div class="fb-submenu">
+					<div class="fb-submenu-item">
+
+						<!-- SUMNENU IS WIP -->
+						<div class="fb-clear">
+							<div class="fb-grid-span4 docs-fb-row">
+
+								<strong class="fb-submenu-title fb-h3">Beheer uw miles</strong>
+								<ul class="fb-linklist">
+									<li><a href="page-article.html" class="fb-submenu-link">Dummy article</a></li>
+								</ul>
+
+							</div>
+							<div class="fb-grid-span4 docs-fb-row">
+
+								<strong class="fb-submenu-title fb-h3">Uw pincode en kaart</strong>
+								<ul class="fb-linklist">
+									<li><a href="page-article.html" class="fb-submenu-link">Dummy article</a></li>
+								</ul>
+
+							</div>
+							<div class="fb-grid-span4 docs-fb-row">
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</li>
+			<!-- RESPONSIVE MENU, TODO: MORE TEXT CAN BE IN I18N JAVASCRIPT ONLY... -->
+			<li class="fb-menu-item fb-menu-noitem"><a href="sitemap.html" class="fb-menu-link js-fb-menu-noitem">More <i class="fb-icon-angle-right"></i></a>
+				<div class="fb-submenu">
+					<div class="fb-submenu-item">
+		
+						<ul id="fb-menu-responsive"></ul>
+
+					</div>
+				</div>
+			</li>
+		</ul>
+
+
+
+		
+
+
+	</div>
+</div>
+
+</div>
+
+<div class="fb-row" style="height: 400px;">
+	<p>Suspendisse sed nisl eget enim suscipit rutrum. Cras sit amet mi quis justo iaculis auctor tincidunt non elit. Cras in lacus imperdiet, dictum mi a, porta orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut augue risus, adipiscing quis arcu et, convallis euismod nisl. Curabitur quis commodo nisl. Proin eget lacus vitae eros accumsan tincidunt vehicula ut velit. Integer scelerisque aliquam magna, ut condimentum sapien suscipit sed. Etiam euismod dictum nisl, nec convallis tortor porta id. Nulla non felis eget turpis sagittis laoreet at eget velit. Aenean egestas pharetra neque et consequat. Nullam in tempor arcu. Aenean turpis tellus, convallis a rutrum eu, fermentum sit amet sem. Fusce dapibus tellus urna, bibendum mattis risus laoreet vitae. Quisque sagittis lectus at viverra tincidunt.</p>
+</div>
+</div>
+
+
+
+
+	<p id="docs-bottom" class="docs-footer">
+		&copy; 2014 - <a href="index.html">Home</a>  - All rights reserved Flying-Blue.
+	</p>
+
+
+
+<!-- OUR JAVASCRIPT SETUP -->
+<script src="0.0.8/js/bundle.js"></script>
+
+</body>
+</html>
